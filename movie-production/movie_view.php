@@ -1,3 +1,55 @@
+<?php
+    require_once "include\databasetwo_connection.php";
+    // get movie // 
+    try{
+        $params = array(
+            'id'=> $_GET['id']
+        );
+        
+
+        $sql = "SELECT * FROM patient WHERE id = :id";
+
+        $stmt = $connection->prepare($sql);
+
+        $success = $stmt->execute($params);
+
+        if(!$success) {
+            throw new Exception("failed to retrieve movies with id: ". $_GET ['id'] );
+        }
+        else {
+            $movie = $stmt->fetch();
+        }
+    }
+    catch(Exception $e){
+        echo "Error" . $e->getMessage();
+    }
+    // getting the centre //
+    try{
+        $params = array(
+            'id'=> $movie['centre_id']
+        );
+        
+
+        $sql = "SELECT * FROM movie_production WHERE id = :id";
+
+        $stmt = $connection->prepare($sql);
+
+        $success = $stmt->execute($params);
+
+        if(!$success) {
+            throw new Exception("failed to retrieve movies with id: ". $patient['movie_id'] );
+        }
+        else {
+            $centre = $stmt->fetch();
+        }
+    }
+    catch(Exception $e){
+        echo "Error" . $e->getMessage();
+    }
+
+    $connection = null;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

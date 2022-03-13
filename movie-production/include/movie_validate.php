@@ -61,7 +61,7 @@
     
         else {
             $movie ["director"] = sanitize_input($data["director"]);
-            if (!validate_address($patient["director"])) {
+            if (!validate_address($movie["director"])) {
                 $errors["director"] = "Only letters, numbers and spaces are allowed";
             }
         }
@@ -73,8 +73,8 @@
         }
     
         else {
-            $patient ["rdate"] = sanitize_input($data["rdate"]);
-            if (!validate_phone($patient["rdate"])) {
+            $movie ["rdate"] = sanitize_input($data["rdate"]);
+            if (!validate_phone($movie["rdate"])) {
                 $errors["rdate"] = "invalid";
             }
         }
@@ -86,8 +86,8 @@
         }
     
         else {
-            $patient ["email"] = sanitize_input($data["email"]);
-            if (!validate_email($patient["email"])) {
+            $movie ["email"] = sanitize_input($data["email"]);
+            if (!validate_email($movie["email"])) {
                 $errors["email"] = "Invalid email format";
             }
         }
@@ -99,7 +99,7 @@
         }
     
         else {
-            $patient ["pcom"] = sanitize_input($data["pcom"]);
+            $movie ["pcom"] = sanitize_input($data["pcom"]);
             }
         }
     
@@ -110,8 +110,8 @@
         }
     
         else {
-            $patient ["synopsis"] = sanitize_input($data["dob"]);
-            if (!validate_date($patient["dob"])) {
+            $movie ["synopsis"] = sanitize_input($data["dob"]);
+            if (!validate_date($movie["dob"])) {
                 $errors["synopis"] = "Invalid synopis";
             }
         }
@@ -123,7 +123,7 @@
         }
     
         else {
-            $patient ["insurance"] = sanitize_input($data["insurance"]);
+            $movie ["insurance"] = sanitize_input($data["insurance"]);
             
         }
     
@@ -134,14 +134,14 @@
         }
     
         else {
-            $patient["preferences"] = [];
+            $movie["preferences"] = [];
             foreach ($data["preferences"] as $preference) {
-                $patient["preferences"][] = sanitize_input($preference);
+                $movie["preferences"][] = sanitize_input($preference);
             }
         }
 
         return [
-            $patient,
+            $movie,
             $errors
         ];
     }
