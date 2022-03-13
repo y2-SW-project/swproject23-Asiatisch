@@ -119,7 +119,7 @@
          // validate insurance
     
          if (empty($data["insurance"])) {
-            $errors ["insurance"] = "The insurance field is required";
+            $errors ["insurance"] = "The insurances field is required";
         }
     
         else {
