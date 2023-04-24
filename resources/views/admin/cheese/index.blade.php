@@ -21,7 +21,7 @@
 
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#!">CheeseHub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -63,20 +63,20 @@
         </div>
     </header>
     <!-- Section-->
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 mt-5">
+    <section class="py-5 container">
+        <div class="  row px-4 px-lg-5 mt-5">
             @forelse ($cheeses as $cheese)
             <a href="{{route('admin.cheese.show', $cheese)}}">
 
 
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                <div class="  col-3 ">
                     <!--  ---------------------------------------------------------------- -->
-                    <div class="col mb-5">
+                    <div class="mb-5">
                         <div class="card h-100">
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="https://media.istockphoto.com/id/530418574/photo/cheeses-selection.jpg?s=2048x2048&w=is&k=20&c=SQE-PnH014mFFwtoqBMNt3rYS0SehPFAmZnfcOuZaI4=" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
